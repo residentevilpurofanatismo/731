@@ -51,6 +51,7 @@ nav a:hover { color: var(--amarillo); }
   cursor: pointer;
 }
 .whatsapp { background: #00a84f; color: white; }
+
 .hero {
   position: relative;
   min-height: 370px;
@@ -71,8 +72,16 @@ nav a:hover { color: var(--amarillo); }
 }
 .hero h1 span { color: var(--rojo); }
 .hero p { font-size: 19px; line-height: 1.4; }
-.beneficios-hero { display: flex; gap: 18px; margin-top: 25px; }
-.beneficio { text-align: center; font-size: 12px; font-weight: bold; }
+.beneficios-hero {
+  display: flex;
+  gap: 18px;
+  margin-top: 25px;
+}
+.beneficio {
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+}
 .beneficio i {
   display: grid;
   place-items: center;
@@ -133,9 +142,19 @@ h2 { font-size: clamp(25px, 3vw, 35px); margin: 8px 0; }
   flex: 1;
   align-items: flex-start;
 }
-.producto h3 { font-size: 16px; line-height: 1.3; margin: 0 0 8px; }
-.producto p { font-size: 14px; line-height: 1.4; margin: 0 0 10px; color: #444; }
+.producto h3 {
+  font-size: 16px;
+  line-height: 1.3;
+  margin: 0 0 8px;
+}
+.producto p {
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0 0 10px;
+  color: #444;
+}
 .producto .boton { margin-top: auto; }
+
 .frase-beneficios {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -146,23 +165,26 @@ h2 { font-size: clamp(25px, 3vw, 35px); margin: 8px 0; }
   font-size: 13px;
   font-weight: bold;
 }
-.frase-beneficios div { padding: 8px; border-right: 1px solid #b8d9ec; }
+.frase-beneficios div {
+  padding: 8px;
+  border-right: 1px solid #b8d9ec;
+}
+
+/* Banner final corregido: sin imagen duplicada */
 .llamado {
-  display: grid;
-  grid-template-columns: 1fr 1.15fr;
   background: #b90012;
   color: white;
-  align-items: center;
+  text-align: center;
+  padding: 35px 20px;
 }
-.llamado img {
-  width: 100%;
-  height: 100%;
-  min-height: 180px;
-  object-fit: cover;
+.llamado-texto {
+  max-width: 750px;
+  margin: auto;
 }
-.llamado-texto { padding: 25px; }
 .llamado h2 { font-size: clamp(25px, 3vw, 36px); }
 .llamado p { font-size: 17px; line-height: 1.4; }
+.nota { color: #ddd; font-size: 12px; }
+
 footer {
   background: var(--negro);
   color: white;
@@ -175,7 +197,6 @@ footer {
 }
 footer p { line-height: 1.6; font-size: 14px; }
 footer .logo { width: 125px; }
-.nota { color: #bbb; font-size: 12px; }
 
 @media (max-width: 760px) {
   header { flex-wrap: wrap; gap: 12px; }
@@ -196,16 +217,20 @@ footer .logo { width: 125px; }
   .hero p { font-size: 16px; }
   .beneficios-hero { gap: 8px; }
   .beneficio { font-size: 10px; }
-  .encabezado-productos { align-items: flex-start; flex-direction: column; }
-  .grid-productos { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+  .encabezado-productos {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .grid-productos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+  }
   .producto img { height: 135px; }
   .producto-contenido { padding: 10px; }
   .producto h3 { font-size: 14px; }
   .producto p { font-size: 12px; }
   .producto .boton { padding: 9px 13px; font-size: 12px; }
   .frase-beneficios { grid-template-columns: repeat(2, 1fr); }
-  .llamado { grid-template-columns: 1fr; }
-  .llamado img { max-height: 180px; }
 }
 @media (max-width: 390px) {
   .grid-productos { grid-template-columns: 1fr; }
@@ -235,8 +260,11 @@ footer .logo { width: 125px; }
 <section class="hero">
   <div class="hero-texto">
     <h1>CALIDAD QUE<br><span>IMPULSA TU NEGOCIO</span></h1>
-    <p>Trapos de piso, mopas, rejillas y más.<br>
-    Venta mayorista para revendedores, comercios y distribuidores.</p>
+    <p>
+      Trapos de piso, mopas, rejillas y más.<br>
+      Venta mayorista para revendedores,
+      comercios y distribuidores.
+    </p>
     <div class="beneficios-hero">
       <div class="beneficio"><i>↗</i>VENTA<br>MAYORISTA</div>
       <div class="beneficio"><i>✓</i>CALIDAD Y<br>RESISTENCIA</div>
@@ -253,7 +281,10 @@ footer .logo { width: 125px; }
       <div class="etiqueta">NUESTROS PRODUCTOS</div>
       <h2>Variedad y rendimiento para tu negocio</h2>
     </div>
-    <div class="mayorista">▣ Consultá por precios mayoristas<br>y presentaciones especiales.</div>
+    <div class="mayorista">
+      ▣ Consultá por precios mayoristas<br>
+      y presentaciones especiales.
+    </div>
   </div>
 
   <div class="grid-productos">
@@ -321,12 +352,16 @@ footer .logo { width: 125px; }
   <div>♧ Atención personalizada<br>para revendedores</div>
 </section>
 
+<!-- Se corrigió el banner final para que no se duplique la imagen -->
 <section class="llamado">
-  <img src="assets/banner-mayoristas.jpg" alt="Productos textiles de 731">
   <div class="llamado-texto">
     <h2>¿Querés revender nuestros productos?</h2>
     <p>Consultá por precios mayoristas, presentaciones y disponibilidad.</p>
-    <a class="boton whatsapp" href="https://wa.me/5411XXXXXXXX?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20productos" target="_blank" rel="noopener">☎ Escribinos por WhatsApp</a>
+    <a class="boton whatsapp"
+       href="https://wa.me/5411XXXXXXXX?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20productos"
+       target="_blank" rel="noopener">
+      ☎ Escribinos por WhatsApp
+    </a>
     <p class="nota">Mensaje sugerido: “Hola, quiero información sobre los productos”.</p>
   </div>
 </section>
@@ -334,9 +369,18 @@ footer .logo { width: 125px; }
 
 <footer id="contacto">
   <img class="logo" src="assets/logo-731.jpg" alt="Logo 731">
-  <div><strong>Contacto</strong><p>Tel. / WhatsApp: 11 XXXXXX<br><span class="nota">Número ilustrativo</span></p></div>
-  <div><strong>Correo electrónico</strong><p><a href="mailto:contacto@ejemplo.com">contacto@ejemplo.com</a><br><span class="nota">Correo ilustrativo</span></p></div>
-  <div><strong>Seguinos</strong><p>Instagram · Facebook</p></div>
+  <div>
+    <strong>Contacto</strong>
+    <p>Tel. / WhatsApp: 11 XXXXXX<br><span class="nota">Número ilustrativo</span></p>
+  </div>
+  <div>
+    <strong>Correo electrónico</strong>
+    <p><a href="mailto:contacto@ejemplo.com">contacto@ejemplo.com</a><br><span class="nota">Correo ilustrativo</span></p>
+  </div>
+  <div>
+    <strong>Seguinos</strong>
+    <p>Instagram · Facebook</p>
+  </div>
 </footer>
 </body>
 </html>
