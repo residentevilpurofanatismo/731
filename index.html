@@ -2,886 +2,750 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#171717">
-  <meta name="description" content="731: textiles y artículos de limpieza para mayoristas, emprendedores y comercios de toda Argentina.">
-  <title>731 | Calidad que impulsa tu negocio</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --negro: #171717;
-      --rojo: #d52b2b;
-      --amarillo: #f2c94c;
-      --blanco: #ffffff;
-      --gris: #f5f5f5;
-      --texto: #333333;
-      --muted: #707070;
-      --verde: #25d366;
-      --radio: 18px;
-      --sombra: 0 8px 28px rgba(0,0,0,.08);
-    }
-
-    * { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      color: var(--texto);
-      background: var(--blanco);
-      font-family: "DM Sans", Arial, sans-serif;
-      line-height: 1.6;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    a { color: inherit; }
-
-    .contenedor {
-      width: min(1120px, 92%);
-      margin: auto;
-    }
-
-    .barra-superior {
-      background: var(--rojo);
-      color: white;
-      text-align: center;
-      padding: 8px 12px;
-      font-size: .83rem;
-      font-weight: 700;
-      letter-spacing: .3px;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: rgba(255,255,255,.97);
-      border-bottom: 1px solid #eeeeee;
-      backdrop-filter: blur(12px);
-    }
-
-    .navegacion {
-      min-height: 82px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .marca {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      flex-shrink: 0;
-    }
-
-    .marca img {
-      width: 112px;
-      max-height: 66px;
-      object-fit: contain;
-    }
-
-    .menu {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-
-    .menu a {
-      text-decoration: none;
-      font-size: .93rem;
-      font-weight: 700;
-      transition: color .2s;
-    }
-
-    .menu a:hover { color: var(--rojo); }
-
-    .boton {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      gap: 8px;
-      border: 0;
-      border-radius: 999px;
-      padding: 13px 21px;
-      font-family: inherit;
-      font-size: .94rem;
-      font-weight: 800;
-      text-decoration: none;
-      cursor: pointer;
-      transition: transform .2s, filter .2s;
-    }
-
-    .boton:hover {
-      transform: translateY(-2px);
-      filter: brightness(.96);
-    }
-
-    .boton-rojo {
-      background: var(--rojo);
-      color: white;
-    }
-
-    .boton-verde {
-      background: var(--verde);
-      color: #102b18;
-    }
-
-    .boton-oscuro {
-      background: var(--negro);
-      color: white;
-    }
-
-    .hero {
-      background:
-        radial-gradient(circle at 85% 15%, rgba(242,201,76,.19), transparent 27%),
-        linear-gradient(135deg, #171717 0%, #292929 100%);
-      color: white;
-      overflow: hidden;
-    }
-
-    .hero-interior {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 44px;
-      padding-top: 56px;
-      padding-bottom: 56px;
-    }
-
-    .etiqueta {
-      display: inline-block;
-      color: var(--amarillo);
-      font-size: .79rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 12px;
-    }
-
-    h1, h2, h3 {
-      font-family: "Montserrat", Arial, sans-serif;
-      line-height: 1.2;
-      margin-top: 0;
-    }
-
-    h1 {
-      font-size: clamp(2.3rem, 5vw, 4.25rem);
-      letter-spacing: -1.8px;
-      margin-bottom: 20px;
-    }
-
-    h1 span { color: var(--amarillo); }
-
-    .hero p {
-      color: #e3e3e3;
-      font-size: 1.08rem;
-      max-width: 540px;
-      margin-bottom: 26px;
-    }
-
-    .hero-acciones {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .hero-foto {
-      position: relative;
-    }
-
-    .hero-foto img {
-      width: 100%;
-      height: 390px;
-      object-fit: cover;
-      border-radius: 24px;
-      box-shadow: 0 20px 55px rgba(0,0,0,.3);
-    }
-
-    .hero-sello {
-      position: absolute;
-      left: -15px;
-      bottom: 20px;
-      background: var(--amarillo);
-      color: var(--negro);
-      padding: 13px 18px;
-      border-radius: 12px;
-      font-weight: 900;
-      box-shadow: var(--sombra);
-    }
-
-    .beneficios {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      padding-top: 28px;
-      padding-bottom: 28px;
-    }
-
-    .beneficio {
-      display: flex;
-      align-items: center;
-      gap: 13px;
-      padding: 15px;
-      border: 1px solid #eeeeee;
-      border-radius: 14px;
-    }
-
-    .beneficio-icono {
-      width: 43px;
-      height: 43px;
-      display: grid;
-      place-items: center;
-      flex-shrink: 0;
-      background: #fff1c5;
-      border-radius: 12px;
-      font-size: 1.35rem;
-    }
-
-    .beneficio strong {
-      display: block;
-      color: var(--negro);
-      font-size: .94rem;
-    }
-
-    .beneficio small {
-      display: block;
-      color: var(--muted);
-      font-size: .8rem;
-    }
-
-    section { scroll-margin-top: 100px; }
-
-    .seccion {
-      padding-top: 76px;
-      padding-bottom: 76px;
-    }
-
-    .seccion-gris { background: var(--gris); }
-
-    .encabezado-seccion {
-      text-align: center;
-      max-width: 690px;
-      margin: 0 auto 36px;
-    }
-
-    .sobrelinea {
-      color: var(--rojo);
-      text-transform: uppercase;
-      letter-spacing: 1.8px;
-      font-size: .78rem;
-      font-weight: 900;
-    }
-
-    .encabezado-seccion h2 {
-      color: var(--negro);
-      font-size: clamp(1.8rem, 4vw, 2.65rem);
-      margin: 8px 0 12px;
-    }
-
-    .encabezado-seccion p {
-      color: var(--muted);
-      margin: 0;
-    }
-
-    .productos-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 24px;
-    }
-
-    .producto {
-      background: white;
-      border: 1px solid #ececec;
-      border-radius: var(--radio);
-      overflow: hidden;
-      box-shadow: 0 5px 20px rgba(0,0,0,.035);
-      transition: transform .2s, box-shadow .2s;
-    }
-
-    .producto:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--sombra);
-    }
-
-    .producto-foto {
-      height: 245px;
-      background: #f3f3f3;
-      overflow: hidden;
-    }
-
-    .producto-foto img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform .35s;
-    }
-
-    .producto:hover .producto-foto img {
-      transform: scale(1.04);
-    }
-
-    .producto-contenido { padding: 22px; }
-
-    .producto-contenido h3 {
-      font-size: 1.1rem;
-      color: var(--negro);
-      margin-bottom: 8px;
-    }
-
-    .producto-contenido p {
-      color: var(--muted);
-      font-size: .92rem;
-      margin: 0 0 18px;
-    }
-
-    .producto-contenido .boton {
-      width: 100%;
-      padding: 11px 15px;
-    }
-
-    .catalogo-pie {
-      text-align: center;
-      margin-top: 34px;
-    }
-
-    .historia {
-      display: grid;
-      grid-template-columns: .95fr 1.05fr;
-      align-items: center;
-      gap: 42px;
-    }
-
-    .historia-foto img {
-      width: 100%;
-      height: 390px;
-      object-fit: cover;
-      border-radius: 22px;
-      box-shadow: var(--sombra);
-    }
-
-    .historia-texto h2 {
-      color: var(--negro);
-      font-size: clamp(1.9rem, 4vw, 2.7rem);
-      margin-bottom: 16px;
-    }
-
-    .historia-texto p {
-      color: var(--muted);
-      margin-bottom: 14px;
-    }
-
-    .detalle-rojo {
-      width: 62px;
-      height: 4px;
-      background: var(--rojo);
-      border-radius: 99px;
-      margin: 18px 0;
-    }
-
-    .mision-vision {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 24px;
-      margin-top: 38px;
-    }
-
-    .tarjeta-identidad {
-      position: relative;
-      overflow: hidden;
-      background: white;
-      border: 1px solid #e9e9e9;
-      border-radius: 20px;
-      padding: 30px;
-      box-shadow: 0 7px 25px rgba(0,0,0,.045);
-    }
-
-    .tarjeta-identidad::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 5px;
-      background: var(--rojo);
-    }
-
-    .identidad-icono {
-      display: grid;
-      place-items: center;
-      width: 52px;
-      height: 52px;
-      background: #fff1c5;
-      border-radius: 15px;
-      font-size: 1.6rem;
-      margin-bottom: 18px;
-    }
-
-    .tarjeta-identidad h3 {
-      font-size: 1.35rem;
-      color: var(--negro);
-      margin-bottom: 12px;
-    }
-
-    .tarjeta-identidad p {
-      color: var(--muted);
-      margin: 0;
-    }
-
-    .frase-final {
-      margin-top: 28px;
-      padding: 28px;
-      border-radius: 18px;
-      background: var(--negro);
-      color: white;
-      text-align: center;
-    }
-
-    .frase-final strong {
-      display: block;
-      color: var(--amarillo);
-      font-family: "Montserrat", Arial, sans-serif;
-      font-size: clamp(1.25rem, 3vw, 1.8rem);
-      margin-bottom: 5px;
-    }
-
-    .llamado {
-      padding: 55px 0;
-      background: var(--rojo);
-      color: white;
-      text-align: center;
-    }
-
-    .llamado h2 {
-      font-size: clamp(1.7rem, 4vw, 2.5rem);
-      margin-bottom: 12px;
-    }
-
-    .llamado p {
-      max-width: 620px;
-      margin: 0 auto 24px;
-      color: #ffeaea;
-    }
-
-    footer {
-      background: var(--negro);
-      color: white;
-      padding: 40px 0 18px;
-    }
-
-    .pie-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr 1fr;
-      gap: 32px;
-      padding-bottom: 28px;
-    }
-
-    .pie-logo {
-      width: 100px;
-      max-height: 70px;
-      object-fit: contain;
-      background: white;
-      border-radius: 8px;
-      padding: 4px;
-      margin-bottom: 14px;
-    }
-
-    footer h3 {
-      color: var(--amarillo);
-      font-size: 1rem;
-      margin-bottom: 12px;
-    }
-
-    footer p, footer a {
-      color: #d7d7d7;
-      font-size: .9rem;
-    }
-
-    footer a {
-      display: block;
-      text-decoration: none;
-      margin: 7px 0;
-    }
-
-    footer a:hover { color: var(--amarillo); }
-
-    .copyright {
-      border-top: 1px solid #393939;
-      text-align: center;
-      padding-top: 17px;
-      color: #a9a9a9;
-      font-size: .8rem;
-    }
-
-    .whatsapp-flotante {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      z-index: 30;
-      width: 58px;
-      height: 58px;
-      display: grid;
-      place-items: center;
-      background: var(--verde);
-      color: #12351e;
-      border-radius: 50%;
-      text-decoration: none;
-      font-size: 1.7rem;
-      font-weight: 900;
-      box-shadow: 0 6px 22px rgba(0,0,0,.22);
-    }
-
-    @media (max-width: 800px) {
-      .navegacion {
-        padding: 12px 0;
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .marca img { width: 95px; }
-
-      .menu {
-        justify-content: center;
-        gap: 12px 18px;
-      }
-
-      .menu a { font-size: .86rem; }
-
-      .menu .boton { padding: 9px 13px; }
-
-      .hero-interior {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        padding-top: 42px;
-        padding-bottom: 42px;
-      }
-
-      .hero-foto img { height: 300px; }
-
-      .hero-sello { left: 10px; }
-
-      .beneficios { grid-template-columns: 1fr; gap: 10px; }
-
-      .productos-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px; }
-
-      .producto-foto { height: 205px; }
-
-      .producto-contenido { padding: 16px; }
-
-      .producto-contenido h3 { font-size: 1rem; }
-
-      .historia { grid-template-columns: 1fr; gap: 26px; }
-
-      .historia-foto img { height: 300px; }
-
-      .mision-vision { grid-template-columns: 1fr; }
-
-      .pie-grid { grid-template-columns: 1fr; gap: 20px; }
-    }
-
-    @media (max-width: 420px) {
-      .productos-grid { grid-template-columns: 1fr; }
-      .producto-foto { height: 250px; }
-      .hero-acciones .boton { width: 100%; }
-      .tarjeta-identidad { padding: 24px; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#171717">
+<meta name="description" content="731: textiles y artículos de limpieza para mayoristas, emprendedores y comercios de toda Argentina.">
+<title>731 | Calidad que impulsa tu negocio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --negro:#171717;
+  --rojo:#d52b2b;
+  --amarillo:#f2c94c;
+  --blanco:#fff;
+  --gris:#f5f5f5;
+  --texto:#333;
+  --muted:#707070;
+  --verde:#25d366;
+  --sombra:0 8px 28px rgba(0,0,0,.08);
+}
+
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  margin:0;
+  color:var(--texto);
+  background:var(--blanco);
+  font-family:"DM Sans",Arial,sans-serif;
+  line-height:1.6;
+}
+img { display:block; max-width:100%; }
+a { color:inherit; }
+.contenedor { width:min(1120px,92%); margin:auto; }
+
+.barra-superior {
+  background:var(--rojo);
+  color:white;
+  text-align:center;
+  padding:8px 12px;
+  font-size:.83rem;
+  font-weight:700;
+  letter-spacing:.3px;
+}
+
+header {
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:rgba(255,255,255,.97);
+  border-bottom:1px solid #eee;
+  backdrop-filter:blur(12px);
+}
+
+.navegacion {
+  min-height:82px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+
+.marca {
+  display:flex;
+  align-items:center;
+  text-decoration:none;
+  flex-shrink:0;
+}
+
+.marca img {
+  width:112px;
+  max-height:66px;
+  object-fit:contain;
+}
+
+.menu {
+  display:flex;
+  align-items:center;
+  gap:24px;
+  flex-wrap:wrap;
+}
+
+.menu a {
+  text-decoration:none;
+  font-size:.93rem;
+  font-weight:700;
+  transition:color .2s;
+}
+
+.menu a:hover { color:var(--rojo); }
+
+.boton {
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  gap:8px;
+  border:0;
+  border-radius:999px;
+  padding:13px 21px;
+  font-family:inherit;
+  font-size:.94rem;
+  font-weight:800;
+  text-decoration:none;
+  cursor:pointer;
+  transition:transform .2s,filter .2s;
+}
+
+.boton:hover {
+  transform:translateY(-2px);
+  filter:brightness(.96);
+}
+
+.boton-rojo { background:var(--rojo); color:white; }
+.boton-verde { background:var(--verde); color:#102b18; }
+.boton-oscuro { background:var(--negro); color:white; }
+
+.hero {
+  background:
+    radial-gradient(circle at 85% 15%,rgba(242,201,76,.19),transparent 27%),
+    linear-gradient(135deg,#171717 0%,#292929 100%);
+  color:white;
+  overflow:hidden;
+}
+
+.hero-interior {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:44px;
+  padding-top:56px;
+  padding-bottom:56px;
+}
+
+.etiqueta {
+  display:inline-block;
+  color:var(--amarillo);
+  font-size:.79rem;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  margin-bottom:12px;
+}
+
+h1,h2,h3 {
+  font-family:"Montserrat",Arial,sans-serif;
+  line-height:1.2;
+  margin-top:0;
+}
+
+h1 {
+  font-size:clamp(2.3rem,5vw,4.25rem);
+  letter-spacing:-1.8px;
+  margin-bottom:20px;
+}
+
+h1 span { color:var(--amarillo); }
+
+.hero p {
+  color:#e3e3e3;
+  font-size:1.08rem;
+  max-width:540px;
+  margin-bottom:26px;
+}
+
+.hero-acciones {
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.hero-foto { position:relative; }
+
+.hero-foto img {
+  width:100%;
+  height:390px;
+  object-fit:cover;
+  border-radius:24px;
+  box-shadow:0 20px 55px rgba(0,0,0,.3);
+}
+
+.hero-sello {
+  position:absolute;
+  left:-15px;
+  bottom:20px;
+  background:var(--amarillo);
+  color:var(--negro);
+  padding:13px 18px;
+  border-radius:12px;
+  font-weight:900;
+  box-shadow:var(--sombra);
+}
+
+.beneficios {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  padding-top:28px;
+  padding-bottom:28px;
+}
+
+.beneficio {
+  display:flex;
+  align-items:center;
+  gap:13px;
+  padding:15px;
+  border:1px solid #eee;
+  border-radius:14px;
+}
+
+.beneficio-icono {
+  width:43px;
+  height:43px;
+  display:grid;
+  place-items:center;
+  flex-shrink:0;
+  background:#fff1c5;
+  border-radius:12px;
+  font-size:1.35rem;
+}
+
+.beneficio strong {
+  display:block;
+  color:var(--negro);
+  font-size:.94rem;
+}
+
+.beneficio small {
+  display:block;
+  color:var(--muted);
+  font-size:.8rem;
+}
+
+section { scroll-margin-top:100px; }
+
+.seccion {
+  padding-top:76px;
+  padding-bottom:76px;
+}
+
+.seccion-gris { background:var(--gris); }
+
+.encabezado-seccion {
+  text-align:center;
+  max-width:690px;
+  margin:0 auto 36px;
+}
+
+.sobrelinea {
+  color:var(--rojo);
+  text-transform:uppercase;
+  letter-spacing:1.8px;
+  font-size:.78rem;
+  font-weight:900;
+}
+
+.encabezado-seccion h2 {
+  color:var(--negro);
+  font-size:clamp(1.8rem,4vw,2.65rem);
+  margin:8px 0 12px;
+}
+
+.encabezado-seccion p {
+  color:var(--muted);
+  margin:0;
+}
+
+.productos-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:24px;
+}
+
+.producto {
+  background:white;
+  border:1px solid #ececec;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 5px 20px rgba(0,0,0,.035);
+  transition:transform .2s,box-shadow .2s;
+}
+
+.producto:hover {
+  transform:translateY(-5px);
+  box-shadow:var(--sombra);
+}
+
+.producto-foto {
+  height:245px;
+  background:#f3f3f3;
+  overflow:hidden;
+}
+
+.producto-foto img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .35s;
+}
+
+.producto:hover .producto-foto img { transform:scale(1.04); }
+
+.producto-contenido { padding:22px; }
+
+.producto-contenido h3 {
+  font-size:1.1rem;
+  color:var(--negro);
+  margin-bottom:8px;
+}
+
+.producto-contenido p {
+  color:var(--muted);
+  font-size:.92rem;
+  margin:0 0 18px;
+}
+
+.producto-contenido .boton {
+  width:100%;
+  padding:11px 15px;
+}
+
+.catalogo-pie {
+  text-align:center;
+  margin-top:34px;
+}
+
+.historia {
+  display:grid;
+  grid-template-columns:.95fr 1.05fr;
+  align-items:center;
+  gap:42px;
+}
+
+.historia-foto img {
+  width:100%;
+  height:390px;
+  object-fit:cover;
+  border-radius:22px;
+  box-shadow:var(--sombra);
+}
+
+.historia-texto h2 {
+  color:var(--negro);
+  font-size:clamp(1.9rem,4vw,2.7rem);
+  margin-bottom:16px;
+}
+
+.historia-texto p {
+  color:var(--muted);
+  margin-bottom:14px;
+}
+
+.detalle-rojo {
+  width:62px;
+  height:4px;
+  background:var(--rojo);
+  border-radius:99px;
+  margin:18px 0;
+}
+
+.mision-vision {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:24px;
+  margin-top:38px;
+}
+
+.tarjeta-identidad {
+  position:relative;
+  overflow:hidden;
+  background:white;
+  border:1px solid #e9e9e9;
+  border-radius:20px;
+  padding:30px;
+  box-shadow:0 7px 25px rgba(0,0,0,.045);
+}
+
+.tarjeta-identidad::before {
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:5px;
+  background:var(--rojo);
+}
+
+.identidad-icono {
+  display:grid;
+  place-items:center;
+  width:52px;
+  height:52px;
+  background:#fff1c5;
+  border-radius:15px;
+  font-size:1.6rem;
+  margin-bottom:18px;
+}
+
+.tarjeta-identidad h3 {
+  font-size:1.35rem;
+  color:var(--negro);
+  margin-bottom:12px;
+}
+
+.tarjeta-identidad p {
+  color:var(--muted);
+  margin:0;
+}
+
+.frase-final {
+  margin-top:28px;
+  padding:28px;
+  border-radius:18px;
+  background:var(--negro);
+  color:white;
+  text-align:center;
+}
+
+.frase-final strong {
+  display:block;
+  color:var(--amarillo);
+  font-family:"Montserrat",Arial,sans-serif;
+  font-size:clamp(1.25rem,3vw,1.8rem);
+  margin-bottom:5px;
+}
+
+.llamado {
+  padding:55px 0;
+  background:var(--rojo);
+  color:white;
+  text-align:center;
+}
+
+.llamado h2 {
+  font-size:clamp(1.7rem,4vw,2.5rem);
+  margin-bottom:12px;
+}
+
+.llamado p {
+  max-width:620px;
+  margin:0 auto 24px;
+  color:#ffeaea;
+}
+
+footer {
+  background:var(--negro);
+  color:white;
+  padding:40px 0 18px;
+}
+
+.pie-grid {
+  display:grid;
+  grid-template-columns:1.2fr 1fr 1fr;
+  gap:32px;
+  padding-bottom:28px;
+}
+
+.pie-logo {
+  width:100px;
+  max-height:70px;
+  object-fit:contain;
+  background:white;
+  border-radius:8px;
+  padding:4px;
+  margin-bottom:14px;
+}
+
+footer h3 {
+  color:var(--amarillo);
+  font-size:1rem;
+  margin-bottom:12px;
+}
+
+footer p,footer a {
+  color:#d7d7d7;
+  font-size:.9rem;
+}
+
+footer a {
+  display:block;
+  text-decoration:none;
+  margin:7px 0;
+}
+
+footer a:hover { color:var(--amarillo); }
+
+.copyright {
+  border-top:1px solid #393939;
+  text-align:center;
+  padding-top:17px;
+  color:#a9a9a9;
+  font-size:.8rem;
+}
+
+.whatsapp-flotante {
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:30;
+  width:58px;
+  height:58px;
+  display:grid;
+  place-items:center;
+  background:var(--verde);
+  color:#12351e;
+  border-radius:50%;
+  text-decoration:none;
+  font-size:1.7rem;
+  font-weight:900;
+  box-shadow:0 6px 22px rgba(0,0,0,.22);
+}
+
+@media(max-width:800px) {
+  .navegacion {
+    padding:12px 0;
+    flex-direction:column;
+    gap:10px;
+  }
+  .marca img { width:95px; }
+  .menu { justify-content:center; gap:12px 18px; }
+  .menu a { font-size:.86rem; }
+  .menu .boton { padding:9px 13px; }
+  .hero-interior {
+    grid-template-columns:1fr;
+    gap:30px;
+    padding-top:42px;
+    padding-bottom:42px;
+  }
+  .hero-foto img { height:300px; }
+  .hero-sello { left:10px; }
+  .beneficios { grid-template-columns:1fr; gap:10px; }
+  .productos-grid {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:15px;
+  }
+  .producto-foto { height:205px; }
+  .producto-contenido { padding:16px; }
+  .producto-contenido h3 { font-size:1rem; }
+  .historia { grid-template-columns:1fr; gap:26px; }
+  .historia-foto img { height:300px; }
+  .mision-vision { grid-template-columns:1fr; }
+  .pie-grid { grid-template-columns:1fr; gap:20px; }
+}
+
+@media(max-width:420px) {
+  .productos-grid { grid-template-columns:1fr; }
+  .producto-foto { height:250px; }
+  .hero-acciones .boton { width:100%; }
+  .tarjeta-identidad { padding:24px; }
+}
+</style>
 </head>
 
 <body>
-  <div class="barra-superior">
-    VENTA MAYORISTA · TEXTILES Y ARTÍCULOS DE LIMPIEZA
+<div class="barra-superior">
+  VENTA MAYORISTA · TEXTILES Y ARTÍCULOS DE LIMPIEZA
+</div>
+
+<header>
+  <div class="contenedor navegacion">
+    <a class="marca" href="index.html" aria-label="731, inicio">
+      <img src="assets/logo-731.jpg" alt="Logo 731">
+    </a>
+
+    <nav class="menu" aria-label="Navegación principal">
+      <a href="index.html">Inicio</a>
+      <a href="productos.html">Productos</a>
+      <a href="nosotros.html">¿Por qué 731?</a>
+      <a href="index.html#contacto">Contacto</a>
+      <a class="boton boton-rojo"
+         href="https://wa.me/5491173660338?text=Hola%2C%20quiero%20consultar%20por%20productos%20mayoristas%20de%20731."
+         target="_blank" rel="noopener noreferrer">Consultar</a>
+    </nav>
   </div>
+</header>
 
-  <header>
-    <div class="contenedor navegacion">
-      <a class="marca" href="index.html" aria-label="731, inicio">
-        <img src="assets/logo-731.jpg" alt="Logo 731">
-      </a>
+<main>
+  <section class="hero" id="inicio">
+    <div class="contenedor hero-interior">
+      <div>
+        <span class="etiqueta">Bienvenidos a 731</span>
+        <h1>Calidad que impulsa <span>tu negocio.</span></h1>
+        <p>Textiles y artículos de limpieza pensados para emprendedores, revendedores y comercios que buscan calidad y precios competitivos.</p>
+        <div class="hero-acciones">
+          <a class="boton boton-rojo" href="productos.html">Ver productos</a>
+          <a class="boton boton-verde"
+             href="https://wa.me/5491173660338?text=Hola%2C%20quiero%20recibir%20informaci%C3%B3n%20mayorista%20de%20731."
+             target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
+        </div>
+      </div>
 
-      <nav class="menu" aria-label="Navegación principal">
+      <div class="hero-foto">
+        <img src="assets/hero-textiles.jpg" alt="Textiles y artículos de limpieza de 731">
+        <div class="hero-sello">731 · Venta mayorista</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contenedor beneficios" aria-label="Beneficios de 731">
+    <div class="beneficio">
+      <div class="beneficio-icono">✦</div>
+      <div><strong>Calidad seleccionada</strong><small>Productos para el uso diario</small></div>
+    </div>
+    <div class="beneficio">
+      <div class="beneficio-icono">◇</div>
+      <div><strong>Enfoque mayorista</strong><small>Para comercios y revendedores</small></div>
+    </div>
+    <div class="beneficio">
+      <div class="beneficio-icono">↗</div>
+      <div><strong>Un negocio que crece</strong><small>Con mirada en todo el país</small></div>
+    </div>
+  </section>
+
+  <section class="seccion seccion-gris" id="destacados">
+    <div class="contenedor">
+      <div class="encabezado-seccion">
+        <span class="sobrelinea">Conocé nuestra selección</span>
+        <h2>Productos destacados</h2>
+        <p>Descubrí parte de nuestra línea de textiles y artículos de limpieza. Consultanos por disponibilidad, presentaciones y condiciones mayoristas.</p>
+      </div>
+
+      <div class="productos-grid">
+        <article class="producto">
+          <div class="producto-foto"><img src="assets/trapo-nido-blanco.jpg" alt="Trapo nido blanco" loading="lazy"></div>
+          <div class="producto-contenido"><h3>Trapo nido blanco</h3><p>Una opción práctica para sumar a tu catálogo de limpieza.</p>
+            <a class="boton boton-oscuro" href="https://wa.me/5491173660338?text=Hola%2C%20quiero%20consultar%20por%20el%20trapo%20nido%20blanco." target="_blank" rel="noopener noreferrer">Consultar producto</a>
+          </div>
+        </article>
+
+        <article class="producto">
+          <div class="producto-foto"><img src="assets/trapo-liso-gris.jpg" alt="Trapo liso gris" loading="lazy"></div>
+          <div class="producto-contenido"><h3>Trapo liso gris</h3><p>Una alternativa para comercios y revendedores.</p>
+            <a class="boton boton-oscuro" href="https://wa.me/5491173660338?text=Hola%2C%20quiero%20consultar%20por%20el%20trapo%20liso%20gris." target="_blank" rel="noopener noreferrer">Consultar producto</a>
+          </div>
+        </article>
+
+        <article class="producto">
+          <div class="producto-foto"><img src="assets/trapos-rayados.jpg" alt="Trapos rayados" loading="lazy"></div>
+          <div class="producto-contenido"><h3>Trapos rayados</h3><p>Textiles de limpieza para ampliar tu oferta comercial.</p>
+            <a class="boton boton-oscuro" href="https://wa.me/5491173660338?text=Hola%2C%20quiero%20consultar%20por%20los%20trapos%20rayados." target="_blank" rel="noopener noreferrer">Consultar producto</a>
+          </div>
+        </article>
+
+        <article class="producto">
+          <div class="producto-foto"><img src="assets/rejillas-pabilo.jpg" alt="Rejillas de pabilo" loading="lazy"></div>
+          <div class="producto-contenido"><h3>Rejillas de pabilo</h3><p>Una opción útil para complementar la línea de limpieza.</p>
+            <a class="boton boton-oscuro" href="https://wa.me/5491173660338?text=Hola%2C%20quiero%20consultar%20por%20las%20rejillas%20de%20pabilo." target="_blank" rel="noopener noreferrer">Consultar producto</a>
+          </div>
+        </article>
+
+        <article class="producto">
+          <div class="producto-foto"><img src="assets/mopa-ballerina-amarilla.jpg" alt="Mopa Ballerina amarilla" loading="lazy"></div>
+          <div class="producto-contenido"><h3>Mopa Ballerina amarilla</h3><p>Una alternativa para incorporar a tu surtido de limpieza.</p>
+            <a class="boton boton-oscuro" href="https://wa.me/5491173660338?text=Hola%2C%20quiero%20consultar%20por%20la%20mopa%20Ballerina%20amarilla." target="_blank" rel="noopener noreferrer">Consultar producto</a>
+          </div>
+        </article>
+
+        <article class="producto">
+          <div class="producto-foto"><img src="assets/mopa-pabilo-retorcido.jpg" alt="Mopa de pabilo retorcido" loading="lazy"></div>
+          <div class="producto-contenido"><h3>Mopa de pabilo retorcido</h3><p>Consultá por este producto y sus condiciones mayoristas.</p>
+            <a class="boton boton-oscuro" href="https://wa.me/5491173660338?text=Hola%2C%20quiero%20consultar%20por%20la%20mopa%20de%20pabilo%20retorcido." target="_blank" rel="noopener noreferrer">Consultar producto</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="catalogo-pie">
+        <a class="boton boton-rojo" href="productos.html">Ver todo el catálogo →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion" id="nosotros">
+    <div class="contenedor">
+      <div class="historia">
+        <div class="historia-foto">
+          <img src="assets/banner-mayoristas.jpg" alt="Presentación comercial de 731" loading="lazy">
+        </div>
+        <div class="historia-texto">
+          <span class="sobrelinea">¿Por qué 731?</span>
+          <h2>Una marca pensada para hacer crecer tu negocio.</h2>
+          <div class="detalle-rojo"></div>
+          <p>731 nace con una idea clara: ofrecer productos de excelente calidad a precios competitivos, facilitando la reventa y acompañando a emprendedores y comercios.</p>
+          <p>Queremos construir relaciones comerciales duraderas, con una propuesta accesible y una mirada puesta en llegar a cada rincón de Argentina.</p>
+          <a class="boton boton-rojo" href="nosotros.html">Conocé nuestra misión y visión</a>
+        </div>
+      </div>
+
+      <div class="mision-vision">
+        <article class="tarjeta-identidad">
+          <div class="identidad-icono" aria-hidden="true">◎</div>
+          <h3>Nuestra misión</h3>
+          <p>Ofrecer productos de excelente calidad al mejor precio posible, brindando soluciones accesibles para emprendedores, revendedores y comercios mayoristas.</p>
+        </article>
+        <article class="tarjeta-identidad">
+          <div class="identidad-icono" aria-hidden="true">↗</div>
+          <h3>Nuestra visión</h3>
+          <p>Lograr que los productos 731 lleguen a cada rincón de Argentina, construyendo una marca reconocida por su calidad, sus precios competitivos y la confianza de sus clientes.</p>
+        </article>
+      </div>
+
+      <div class="frase-final">
+        <strong>731 — Calidad que impulsa tu negocio.</strong>
+        <span>Crecer juntos, llegar más lejos.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="llamado" id="contacto">
+    <div class="contenedor">
+      <h2>¿Querés sumar 731 a tu negocio?</h2>
+      <p>Escribinos para consultar por nuestros productos, disponibilidad y condiciones de venta mayorista.</p>
+      <a class="boton boton-verde" href="https://wa.me/5491173660338?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20venta%20mayorista%20de%20731." target="_blank" rel="noopener noreferrer">Hablar por WhatsApp</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="contenedor">
+    <div class="pie-grid">
+      <div>
+        <img class="pie-logo" src="assets/logo-731.jpg" alt="Logo 731" loading="lazy">
+        <p>Textiles y artículos de limpieza. Una propuesta mayorista para emprendedores, revendedores y comercios.</p>
+      </div>
+      <div>
+        <h3>Navegación</h3>
         <a href="index.html">Inicio</a>
         <a href="productos.html">Productos</a>
-        <a href="#nosotros">¿Por qué 731?</a>
-        <a href="#contacto">Contacto</a>
-        <a class="boton boton-rojo"
-           href="https://wa.me/5491173660338?text=Hola%2C%20quiero%20consultar%20por%20productos%20mayoristas%20de%20731."
-           target="_blank" rel="noopener noreferrer">Consultar</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero" id="inicio">
-      <div class="contenedor hero-interior">
-        <div>
-          <span class="etiqueta">Bienvenidos a 731</span>
-          <h1>Calidad que impulsa <span>tu negocio.</span></h1>
-          <p>
-            Textiles y artículos de limpieza pensados para emprendedores,
-            revendedores y comercios que buscan calidad y precios competitivos.
-          </p>
-          <div class="hero-acciones">
-            <a class="boton boton-rojo" href="productos.html">Ver productos</a>
-            <a class="boton boton-verde"
-               href="https://wa.me/5491173660338?text=Hola%2C%20quiero%20recibir%20informaci%C3%B3n%20mayorista%20de%20731."
-               target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
-          </div>
-        </div>
-
-        <div class="hero-foto">
-          <img src="assets/hero-textiles.jpg"
-               alt="Textiles y artículos de limpieza de 731">
-          <div class="hero-sello">731 · Venta mayorista</div>
-        </div>
+        <a href="nosotros.html">¿Por qué 731?</a>
+        <a href="index.html#contacto">Contacto</a>
       </div>
-    </section>
-
-    <section class="contenedor beneficios" aria-label="Beneficios de 731">
-      <div class="beneficio">
-        <div class="beneficio-icono">✦</div>
-        <div>
-          <strong>Calidad seleccionada</strong>
-          <small>Productos para el uso diario</small>
-        </div>
-      </div>
-      <div class="beneficio">
-        <div class="beneficio-icono">◇</div>
-        <div>
-          <strong>Enfoque mayorista</strong>
-          <small>Para comercios y revendedores</small>
-        </div>
-      </div>
-      <div class="beneficio">
-        <div class="beneficio-icono">↗</div>
-        <div>
-          <strong>Un negocio que crece</strong>
-          <small>Con mirada en todo el país</small>
-        </div>
-      </div>
-    </section>
-
-    <section class="seccion seccion-gris" id="destacados">
-      <div class="contenedor">
-        <div class="encabezado-seccion">
-          <span class="sobrelinea">Conocé nuestra selección</span>
-          <h2>Productos destacados</h2>
-          <p>
-            Descubrí parte de nuestra línea de textiles y artículos de limpieza.
-            Consultanos por disponibilidad, presentaciones y condiciones mayoristas.
-          </p>
-        </div>
-
-        <div class="productos-grid">
-          <article class="producto">
-            <div class="producto-foto">
-              <img src="assets/trapo-nido-blanco.jpg"
-                   alt="Trapo nido blanco" loading="lazy">
-            </div>
-            <div class="producto-contenido">
-              <h3>Trapo nido blanco</h3>
-              <p>Una opción práctica para sumar a tu catálogo de limpieza.</p>
-              <a class="boton boton-oscuro"
-                 href="https://wa.me/5491173660338?text=Hola%2C%20quiero%20consultar%20por%20el%20trapo%20nido%20blanco."
-                 target="_blank" rel="noopener noreferrer">Consultar producto</a>
-            </div>
-          </article>
-
-          <article class="producto">
-            <div class="producto-foto">
-              <img src="assets/trapo-liso-gris.jpg"
-                   alt="Trapo liso gris" loading="lazy">
-            </div>
-            <div class="producto-contenido">
-              <h3>Trapo liso gris</h3>
-              <p>Una alternativa para comercios y revendedores.</p>
-              <a class="boton boton-oscuro"
-                 href="https://wa.me/5491173660338?text=Hola%2C%20quiero%20consultar%20por%20el%20trapo%20liso%20gris."
-                 target="_blank" rel="noopener noreferrer">Consultar producto</a>
-            </div>
-          </article>
-
-          <article class="producto">
-            <div class="producto-foto">
-              <img src="assets/trapos-rayados.jpg"
-                   alt="Trapos rayados" loading="lazy">
-            </div>
-            <div class="producto-contenido">
-              <h3>Trapos rayados</h3>
-              <p>Textiles de limpieza para ampliar tu oferta comercial.</p>
-              <a class="boton boton-oscuro"
-                 href="https://wa.me/5491173660338?text=Hola%2C%20quiero%20consultar%20por%20los%20trapos%20rayados."
-                 target="_blank" rel="noopener noreferrer">Consultar producto</a>
-            </div>
-          </article>
-
-          <article class="producto">
-            <div class="producto-foto">
-              <img src="assets/rejillas-pabilo.jpg"
-                   alt="Rejillas de pabilo" loading="lazy">
-            </div>
-            <div class="producto-contenido">
-              <h3>Rejillas de pabilo</h3>
-              <p>Una opción útil para complementar la línea de limpieza.</p>
-              <a class="boton boton-oscuro"
-                 href="https://wa.me/5491173660338?text=Hola%2C%20quiero%20consultar%20por%20las%20rejillas%20de%20pabilo."
-                 target="_blank" rel="noopener noreferrer">Consultar producto</a>
-            </div>
-          </article>
-
-          <article class="producto">
-            <div class="producto-foto">
-              <img src="assets/mopa-ballerina-amarilla.jpg"
-                   alt="Mopa Ballerina amarilla" loading="lazy">
-            </div>
-            <div class="producto-contenido">
-              <h3>Mopa Ballerina amarilla</h3>
-              <p>Una alternativa para incorporar a tu surtido de limpieza.</p>
-              <a class="boton boton-oscuro"
-                 href="https://wa.me/5491173660338?text=Hola%2C%20quiero%20consultar%20por%20la%20mopa%20Ballerina%20amarilla."
-                 target="_blank" rel="noopener noreferrer">Consultar producto</a>
-            </div>
-          </article>
-
-          <article class="producto">
-            <div class="producto-foto">
-              <img src="assets/mopa-pabilo-retorcido.jpg"
-                   alt="Mopa de pabilo retorcido" loading="lazy">
-            </div>
-            <div class="producto-contenido">
-              <h3>Mopa de pabilo retorcido</h3>
-              <p>Consultá por este producto y sus condiciones mayoristas.</p>
-              <a class="boton boton-oscuro"
-                 href="https://wa.me/5491173660338?text=Hola%2C%20quiero%20consultar%20por%20la%20mopa%20de%20pabilo%20retorcido."
-                 target="_blank" rel="noopener noreferrer">Consultar producto</a>
-            </div>
-          </article>
-        </div>
-
-        <div class="catalogo-pie">
-          <a class="boton boton-rojo" href="productos.html">Ver todo el catálogo →</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="seccion" id="nosotros">
-      <div class="contenedor">
-        <div class="historia">
-          <div class="historia-foto">
-            <img src="assets/banner-mayoristas.jpg"
-                 alt="Presentación comercial de 731" loading="lazy">
-          </div>
-
-          <div class="historia-texto">
-            <span class="sobrelinea">¿Por qué 731?</span>
-            <h2>Una marca pensada para hacer crecer tu negocio.</h2>
-            <div class="detalle-rojo"></div>
-            <p>
-              731 nace con una idea clara: ofrecer productos de excelente
-              calidad a precios competitivos, facilitando la reventa y
-              acompañando a emprendedores y comercios.
-            </p>
-            <p>
-              Queremos construir relaciones comerciales duraderas, con una
-              propuesta accesible y una mirada puesta en llegar a cada rincón
-              de Argentina.
-            </p>
-          </div>
-        </div>
-
-        <div class="mision-vision">
-          <article class="tarjeta-identidad">
-            <div class="identidad-icono" aria-hidden="true">◎</div>
-            <h3>Nuestra misión</h3>
-            <p>
-              Ofrecer productos de excelente calidad al mejor precio posible,
-              brindando soluciones accesibles para emprendedores, revendedores
-              y comercios mayoristas.
-            </p>
-          </article>
-
-          <article class="tarjeta-identidad">
-            <div class="identidad-icono" aria-hidden="true">↗</div>
-            <h3>Nuestra visión</h3>
-            <p>
-              Lograr que los productos 731 lleguen a cada rincón de Argentina,
-              construyendo una marca reconocida por su calidad, sus precios
-              competitivos y la confianza de sus clientes.
-            </p>
-          </article>
-        </div>
-
-        <div class="frase-final">
-          <strong>731 — Calidad que impulsa tu negocio.</strong>
-          <span>Crecer juntos, llegar más lejos.</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="llamado" id="contacto">
-      <div class="contenedor">
-        <h2>¿Querés sumar 731 a tu negocio?</h2>
-        <p>
-          Escribinos para consultar por nuestros productos, disponibilidad
-          y condiciones de venta mayorista.
-        </p>
-        <a class="boton boton-verde"
-           href="https://wa.me/5491173660338?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20venta%20mayorista%20de%20731."
-           target="_blank" rel="noopener noreferrer">Hablar por WhatsApp</a>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="contenedor">
-      <div class="pie-grid">
-        <div>
-          <img class="pie-logo" src="assets/logo-731.jpg" alt="Logo 731" loading="lazy">
-          <p>
-            Textiles y artículos de limpieza. Una propuesta mayorista para
-            emprendedores, revendedores y comercios.
-          </p>
-        </div>
-
-        <div>
-          <h3>Navegación</h3>
-          <a href="index.html">Inicio</a>
-          <a href="productos.html">Productos</a>
-          <a href="#nosotros">¿Por qué 731?</a>
-          <a href="#contacto">Contacto</a>
-        </div>
-
-        <div>
-          <h3>Consultas mayoristas</h3>
-          <a href="https://wa.me/5491173660338?text=Hola%2C%20quiero%20consultar%20por%20731."
-             target="_blank" rel="noopener noreferrer">WhatsApp: 11 7366-0338</a>
-          <p>Consultá por disponibilidad y condiciones comerciales.</p>
-        </div>
-      </div>
-
-      <div class="copyright">
-        © <span id="anio"></span> 731. Todos los derechos reservados.
+      <div>
+        <h3>Consultas mayoristas</h3>
+        <a href="https://wa.me/5491173660338?text=Hola%2C%20quiero%20consultar%20por%20731." target="_blank" rel="noopener noreferrer">WhatsApp: 11 7366-0338</a>
+        <p>Consultá por disponibilidad y condiciones comerciales.</p>
       </div>
     </div>
-  </footer>
+    <div class="copyright">© <span id="anio"></span> 731. Todos los derechos reservados.</div>
+  </div>
+</footer>
 
-  <a class="whatsapp-flotante"
-     href="https://wa.me/5491173660338?text=Hola%2C%20quiero%20hacer%20una%20consulta%20sobre%20731."
-     target="_blank" rel="noopener noreferrer"
-     aria-label="Consultar por WhatsApp">✆</a>
+<a class="whatsapp-flotante" href="https://wa.me/5491173660338?text=Hola%2C%20quiero%20hacer%20una%20consulta%20sobre%20731." target="_blank" rel="noopener noreferrer" aria-label="Consultar por WhatsApp">✆</a>
 
-  <script>
-    document.getElementById("anio").textContent = new Date().getFullYear();
-  </script>
+<script>
+document.getElementById("anio").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
