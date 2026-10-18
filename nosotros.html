@@ -1,76 +1,397 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#171717">
-  <meta name="description" content="Conocé 731: nuestra historia, misión y visión. Calidad que impulsa tu negocio.">
-  <title>¿Por qué 731? | Nuestra misión y visión</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
-  <style>
-    :root{--black:#171717;--red:#d52b2b;--yellow:#f2c94c;--white:#fff;--gray:#f5f5f5;--muted:#707070;--green:#25d366;--shadow:0 8px 28px rgba(0,0,0,.08)}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:#333;background:#fff;font-family:"DM Sans",Arial,sans-serif;line-height:1.7}a{color:inherit}img{display:block;max-width:100%}.wrap{width:min(1080px,92%);margin:auto}
-    .top{background:var(--red);color:#fff;text-align:center;padding:8px 12px;font-size:.82rem;font-weight:800;letter-spacing:.4px}
-    header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.97);border-bottom:1px solid #eee;backdrop-filter:blur(10px)}.nav{min-height:80px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand img{width:105px;max-height:65px;object-fit:contain}.menu{display:flex;align-items:center;gap:22px;flex-wrap:wrap}.menu a{text-decoration:none;font-size:.92rem;font-weight:800}.menu a:hover,.menu a.active{color:var(--red)}
-    .btn{display:inline-flex;justify-content:center;align-items:center;border:0;border-radius:999px;padding:12px 20px;font-weight:800;font-family:inherit;text-decoration:none;transition:.2s}.btn:hover{transform:translateY(-2px)}.red{background:var(--red);color:#fff}.dark{background:var(--black);color:#fff}.green{background:var(--green);color:#12351e}
-    .hero{background:radial-gradient(circle at 50% 0,rgba(242,201,76,.18),transparent 35%),linear-gradient(135deg,#171717,#292929);color:#fff;text-align:center;padding:58px 0 64px}.logo-mediano{width:148px;height:112px;object-fit:contain;background:#fff;border-radius:18px;padding:10px;margin:0 auto 25px;box-shadow:0 10px 35px #0004}.eyebrow{color:var(--yellow);font-size:.78rem;font-weight:900;letter-spacing:2px;text-transform:uppercase}.hero h1{font:800 clamp(2.25rem,5vw,3.6rem)/1.15 "Montserrat",sans-serif;letter-spacing:-1px;margin:12px 0 16px}.hero h1 span{color:var(--yellow)}.hero p{color:#e2e2e2;max-width:710px;margin:0 auto 25px;font-size:1.05rem}.hero .btn{margin:5px}
-    .section{padding:70px 0}.gray{background:var(--gray)}.heading{text-align:center;max-width:730px;margin:0 auto 35px}.kicker{color:var(--red);font-size:.78rem;letter-spacing:1.8px;text-transform:uppercase;font-weight:900}.heading h2{font:800 clamp(1.8rem,4vw,2.55rem)/1.2 "Montserrat",sans-serif;color:var(--black);margin:8px 0 12px}.heading p{color:var(--muted);margin:0}
-    .story{display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:center}.story-img{width:100%;height:360px;object-fit:cover;border-radius:22px;box-shadow:var(--shadow)}.story-copy h2{font:800 clamp(1.8rem,4vw,2.45rem)/1.2 "Montserrat",sans-serif;color:var(--black);margin:8px 0 14px}.rule{height:4px;width:60px;border-radius:9px;background:var(--red);margin:18px 0}.story-copy p{color:var(--muted);margin:0 0 13px}
-    .values{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.value{position:relative;background:#fff;border:1px solid #e9e9e9;border-radius:20px;padding:30px;overflow:hidden;box-shadow:0 7px 25px #00000008}.value:before{content:"";position:absolute;left:0;top:0;width:100%;height:5px;background:var(--red)}.icon{display:grid;place-items:center;width:54px;height:54px;background:#fff1c5;border-radius:16px;font-size:1.65rem;margin-bottom:18px}.value h3{font:800 1.35rem "Montserrat",sans-serif;color:var(--black);margin:0 0 12px}.value p{color:var(--muted);margin:0}
-    .promise{background:var(--black);color:#fff;text-align:center;padding:35px 25px;border-radius:20px;margin-top:26px}.promise strong{display:block;color:var(--yellow);font:800 clamp(1.3rem,3vw,1.85rem)/1.3 "Montserrat",sans-serif;margin-bottom:7px}.promise span{color:#eee}
-    .cta{background:var(--red);color:#fff;text-align:center;padding:48px 0}.cta h2{font:800 clamp(1.7rem,4vw,2.35rem)/1.2 "Montserrat",sans-serif;margin:0 0 10px}.cta p{max-width:650px;margin:0 auto 22px;color:#ffe8e8}
-    footer{background:var(--black);color:#fff;padding:36px 0 18px}.footgrid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:28px;padding-bottom:24px}.footlogo{width:92px;max-height:65px;object-fit:contain;background:#fff;border-radius:8px;padding:4px;margin-bottom:12px}footer h3{font:700 1rem "Montserrat",sans-serif;color:var(--yellow);margin:0 0 10px}footer p,footer a{color:#d5d5d5;font-size:.9rem}footer a{display:block;text-decoration:none;margin:6px 0}footer a:hover{color:var(--yellow)}.copy{border-top:1px solid #393939;padding-top:15px;text-align:center;color:#aaa;font-size:.8rem}
-    .float{position:fixed;right:18px;bottom:18px;z-index:20;width:56px;height:56px;display:grid;place-items:center;background:var(--green);color:#12351e;border-radius:50%;font-size:1.65rem;font-weight:900;text-decoration:none;box-shadow:0 6px 22px #0003}
-    @media(max-width:800px){.nav{padding:12px 0;flex-direction:column;gap:10px}.brand img{width:92px}.menu{justify-content:center;gap:12px 17px}.menu a{font-size:.85rem}.menu .btn{padding:9px 13px}.story{grid-template-columns:1fr;gap:25px}.story-img{height:280px}.footgrid{grid-template-columns:1fr;gap:18px}.logo-mediano{width:132px;height:100px}}
-    @media(max-width:600px){.values{grid-template-columns:1fr}.section{padding:52px 0}.hero{padding:44px 0 48px}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Conocé la identidad, la misión y la visión de 731 Limpieza Textil.">
+<title>¿Por qué 731? | Limpieza Textil</title>
+
+<style>
+:root {
+  --rojo: #e50920;
+  --amarillo: #ffca28;
+  --negro: #101114;
+  --fondo: #f7f7f5;
+  --texto: #202126;
+  --gris: #626262;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--texto);
+  background: var(--fondo);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  background: var(--negro);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 12px 4%;
+  border-bottom: 3px solid var(--rojo);
+}
+
+.logo {
+  width: 145px;
+  max-height: 75px;
+  object-fit: contain;
+  display: block;
+  background: var(--negro);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  font-size: 14px;
+}
+
+nav a:hover,
+nav a.activo {
+  color: var(--amarillo);
+}
+
+.boton {
+  display: inline-block;
+  background: var(--rojo);
+  color: white;
+  padding: 12px 21px;
+  border-radius: 28px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.boton:hover { opacity: .86; }
+
+.identidad {
+  background: var(--negro);
+  color: white;
+  text-align: center;
+  padding: 35px 20px 42px;
+  border-bottom: 4px solid var(--amarillo);
+}
+
+.identidad .logo-central {
+  display: block;
+  width: 145px;
+  max-height: 105px;
+  object-fit: contain;
+  margin: 0 auto 24px;
+  background: var(--negro);
+}
+
+.etiqueta {
+  color: var(--amarillo);
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.identidad h1 {
+  font-size: clamp(30px, 4vw, 43px);
+  line-height: 1.15;
+  margin: 12px 0;
+}
+
+.identidad h1 span { color: var(--amarillo); }
+
+.identidad p {
+  max-width: 720px;
+  margin: 0 auto;
+  color: #e0e0e0;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.contenido {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 45px 25px 60px;
+}
+
+.introduccion {
+  text-align: center;
+  padding-bottom: 35px;
+  border-bottom: 1px solid #dededb;
+}
+
+.introduccion .etiqueta {
+  color: #bd8500;
+}
+
+.introduccion h2 {
+  font-size: clamp(25px, 3vw, 34px);
+  margin: 10px 0 15px;
+}
+
+.introduccion p {
+  max-width: 700px;
+  margin: auto;
+  color: var(--gris);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.principio {
+  text-align: center;
+  padding: 38px 15px;
+  border-bottom: 1px solid #dededb;
+}
+
+.principio:last-of-type { border-bottom: none; }
+
+.principio .numero {
+  color: var(--rojo);
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.principio h2 {
+  font-size: clamp(27px, 3vw, 35px);
+  margin: 10px 0 18px;
+}
+
+.principio p {
+  max-width: 690px;
+  margin: 0 auto;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(17px, 2vw, 20px);
+  font-style: italic;
+  line-height: 1.9;
+  color: #555;
+}
+
+.frase-final {
+  margin-top: 25px;
+  text-align: center;
+  padding: 25px 15px;
+  border-top: 2px solid var(--rojo);
+}
+
+.frase-final p {
+  margin: 0;
+  color: var(--negro);
+  font-size: clamp(19px, 3vw, 25px);
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.frase-final span { color: #bd8500; }
+
+.frase-final small {
+  display: block;
+  margin-top: 8px;
+  color: var(--gris);
+  font-size: 14px;
+  font-style: italic;
+}
+
+.contacto {
+  text-align: center;
+  padding: 0 20px 45px;
+}
+
+.contacto p {
+  color: var(--gris);
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+footer {
+  background: var(--negro);
+  color: white;
+  padding: 28px 4%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  flex-wrap: wrap;
+  border-top: 3px solid var(--rojo);
+}
+
+footer .logo { width: 125px; }
+
+footer p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #ddd;
+}
+
+footer a:hover { color: var(--amarillo); }
+
+@media (max-width: 760px) {
+  header {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 10px 4%;
+  }
+
+  header .logo { width: 105px; }
+
+  nav {
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+    font-size: 12px;
+  }
+
+  header > .boton {
+    font-size: 12px;
+    padding: 10px 12px;
+  }
+
+  .identidad {
+    padding: 30px 20px 35px;
+  }
+
+  .identidad .logo-central {
+    width: 125px;
+    max-height: 90px;
+    margin-bottom: 20px;
+  }
+
+  .identidad p { font-size: 15px; }
+
+  .contenido { padding: 32px 22px 40px; }
+
+  .introduccion p { font-size: 15px; }
+
+  .principio { padding: 32px 5px; }
+
+  .principio p { line-height: 1.8; }
+
+  footer {
+    gap: 14px;
+    padding: 25px 20px;
+  }
+}
+</style>
 </head>
+
 <body>
-  <div class="top">VENTA MAYORISTA · TEXTILES Y ARTÍCULOS DE LIMPIEZA</div>
-  <header><div class="wrap nav">
-    <a class="brand" href="index.html" aria-label="731, inicio"><img src="assets/logo-731.jpg" alt="Logo 731"></a>
-    <nav class="menu" aria-label="Navegación principal">
-      <a href="index.html">Inicio</a><a href="productos.html">Productos</a><a class="active" href="nosotros.html">¿Por qué 731?</a><a href="index.html#contacto">Contacto</a>
-      <a class="btn red" href="https://wa.me/5491173660338?text=Hola%2C%20quiero%20consultar%20por%20731." target="_blank" rel="noopener noreferrer">Consultar</a>
-    </nav>
-  </div></header>
-  <main>
-    <section class="hero"><div class="wrap">
-      <img class="logo-mediano" src="assets/logo-731.jpg" alt="Logo de 731">
-      <span class="eyebrow">Nuestra identidad</span>
-      <h1>¿Por qué <span>731?</span></h1>
-      <p>Creemos que la calidad y los buenos precios pueden ir de la mano. Queremos acompañar a quienes emprenden, revenden y trabajan todos los días para hacer crecer su negocio.</p>
-      <a class="btn red" href="#mision-vision">Conocé nuestra misión y visión</a>
-      <a class="btn green" href="https://wa.me/5491173660338?text=Hola%2C%20quiero%20conocer%20m%C3%A1s%20sobre%20731." target="_blank" rel="noopener noreferrer">Contactanos</a>
-    </div></section>
 
-    <section class="section"><div class="wrap story">
-      <img class="story-img" src="assets/banner-mayoristas.jpg" alt="Productos y propuesta mayorista de 731" loading="lazy">
-      <div class="story-copy"><span class="kicker">Lo que nos mueve</span><h2>Una idea clara: ayudarte a crecer.</h2><div class="rule"></div>
-        <p>731 nace con la idea de ofrecer productos de excelente calidad a precios competitivos, facilitando la reventa y brindando nuevas oportunidades a emprendedores y comercios.</p>
-        <p>Nuestro objetivo es construir una marca confiable, con una propuesta accesible y una visión de crecimiento que alcance a todo el país.</p>
-      </div>
-    </div></section>
+<header id="inicio">
+  <a href="index.html" aria-label="Ir al inicio">
+    <img class="logo" src="assets/logo-731.jpg" alt="Logo 731">
+  </a>
 
-    <section class="section gray" id="mision-vision"><div class="wrap">
-      <div class="heading"><span class="kicker">Nuestra razón de ser</span><h2>Misión y visión</h2><p>Los principios que guían nuestro trabajo y el futuro que queremos construir junto a nuestros clientes.</p></div>
-      <div class="values">
-        <article class="value"><div class="icon" aria-hidden="true">◎</div><h3>Nuestra misión</h3><p>Ofrecer productos de excelente calidad al mejor precio posible, brindando soluciones accesibles para emprendedores, revendedores y comercios mayoristas.</p></article>
-        <article class="value"><div class="icon" aria-hidden="true">↗</div><h3>Nuestra visión</h3><p>Lograr que los productos 731 lleguen a cada rincón de Argentina, construyendo una marca reconocida por su calidad, sus precios competitivos y la confianza de sus clientes.</p></article>
-      </div>
-      <div class="promise"><strong>731 — Calidad que impulsa tu negocio.</strong><span>Crecer juntos, llegar más lejos.</span></div>
-    </div></section>
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="productos.html">Productos</a>
+    <a class="activo" href="nosotros.html">¿Por qué 731?</a>
+    <a href="index.html#contacto">Contacto</a>
+  </nav>
 
-    <section class="cta"><div class="wrap"><h2>Crezcamos juntos</h2><p>¿Tenés un comercio o querés comenzar a revender? Estamos para responder tus consultas sobre nuestra propuesta mayorista.</p><a class="btn dark" href="https://wa.me/5491173660338?text=Hola%2C%20quiero%20informaci%C3%B3n%20mayorista%20de%20731." target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a></div></section>
-  </main>
-  <footer><div class="wrap"><div class="footgrid">
-    <div><img class="footlogo" src="assets/logo-731.jpg" alt="Logo 731" loading="lazy"><p>Textiles y artículos de limpieza para emprendedores, revendedores y comercios.</p></div>
-    <div><h3>Navegación</h3><a href="index.html">Inicio</a><a href="productos.html">Productos</a><a href="nosotros.html">¿Por qué 731?</a></div>
-    <div><h3>Consultas mayoristas</h3><a href="https://wa.me/5491173660338?text=Hola%2C%20quiero%20consultar%20por%20731." target="_blank" rel="noopener noreferrer">WhatsApp: 11 7366-0338</a><p>Consultá por disponibilidad y condiciones comerciales.</p></div>
-  </div><div class="copy">© <span id="year"></span> 731. Todos los derechos reservados.</div></div></footer>
-  <a class="float" href="https://wa.me/5491173660338?text=Hola%2C%20quiero%20consultar%20por%20731." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">✆</a>
-  <script>document.getElementById("year").textContent=new Date().getFullYear();</script>
+  <a class="boton"
+     href="https://wa.me/5491173660338?text=Hola%2C%20quiero%20conocer%20m%C3%A1s%20sobre%20731"
+     target="_blank" rel="noopener">
+    Consultar
+  </a>
+</header>
+
+<section class="identidad">
+  <img class="logo-central" src="assets/logo-731.jpg" alt="Logo de 731">
+
+  <div class="etiqueta">NUESTRA IDENTIDAD</div>
+
+  <h1>¿Por qué <span>731?</span></h1>
+
+  <p>
+    Creemos que la calidad y los buenos precios pueden ir de la mano.
+    Queremos acompañar a quienes emprenden, revenden y trabajan todos
+    los días para hacer crecer su negocio.
+  </p>
+</section>
+
+<main class="contenido">
+
+  <section class="introduccion">
+    <div class="etiqueta">LO QUE NOS MUEVE</div>
+    <h2>Una idea clara: ayudarte a crecer.</h2>
+    <p>
+      731 nace con la idea de ofrecer productos textiles de calidad
+      a precios competitivos, facilitando la reventa y brindando
+      oportunidades a emprendedores, comercios y distribuidores.
+      Queremos construir una marca confiable, accesible y cercana
+      a quienes eligen trabajar con nosotros.
+    </p>
+  </section>
+
+  <section class="principio">
+    <div class="numero">01 · NUESTRA MISIÓN</div>
+    <h2>Misión</h2>
+    <p>
+      Ofrecer productos textiles y artículos de limpieza de buena
+      calidad a precios competitivos, brindando soluciones accesibles
+      para emprendedores, revendedores y comercios mayoristas.
+      Trabajamos para construir relaciones de confianza y acompañar
+      el crecimiento de cada cliente.
+    </p>
+  </section>
+
+  <section class="principio">
+    <div class="numero">02 · NUESTRO FUTURO</div>
+    <h2>Visión</h2>
+    <p>
+      Lograr que los productos 731 lleguen a cada rincón de Argentina,
+      construyendo una marca reconocida por su calidad, sus precios
+      competitivos y la confianza de sus clientes. Queremos crecer
+      junto a quienes nos eligen y generar nuevas oportunidades.
+    </p>
+  </section>
+
+  <section class="frase-final">
+    <p><span>731</span> — Calidad que impulsa tu negocio.</p>
+    <small>Crecer juntos, llegar más lejos.</small>
+  </section>
+
+</main>
+
+<section class="contacto">
+  <p>¿Querés conocer nuestros productos y condiciones mayoristas?</p>
+  <a class="boton"
+     href="https://wa.me/5491173660338?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20731"
+     target="_blank" rel="noopener">
+    Consultanos por WhatsApp
+  </a>
+</section>
+
+<footer>
+  <a href="index.html">
+    <img class="logo" src="assets/logo-731.jpg" alt="Logo 731">
+  </a>
+
+  <div>
+    <strong>Contacto</strong>
+    <p>WhatsApp: <a href="https://wa.me/5491173660338">11 7366-0338</a></p>
+  </div>
+
+  <div>
+    <strong>Correo electrónico</strong>
+    <p><a href="mailto:contacto@ejemplo.com">contacto@ejemplo.com</a></p>
+  </div>
+
+  <div>
+    <strong>731 Limpieza Textil</strong>
+    <p>Calidad que impulsa tu negocio.</p>
+  </div>
+</footer>
+
 </body>
 </html>
